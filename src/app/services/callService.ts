@@ -11,6 +11,6 @@ export class CallService {
     }
 
     getCalls(): Promise<Response> {
-        return this.genericService.genericCallServices(this.urlService.callContext, null);
+        return this.genericService.genericCallServices(this.urlService.binnacle, null);
     }
 }

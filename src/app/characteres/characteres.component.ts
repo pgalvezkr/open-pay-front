@@ -13,27 +13,25 @@ import { CharacterService } from '../services/characteresService';
 export class CharacteresComponent implements OnInit {
  
   visible: boolean= false;
-  selectedCharacter: Character = new Character(0, "", "", "", new Thumbnail("", ""), [], [], [], []);
+  selectedCharacter: Character = new Character();
   characteres: Character [] = [];
   loading: boolean = false;
 
   constructor (private characteresService: CharacterService,  private messageService: MessageService){}
 
   ngOnInit(): void {
-    this.characteres.push(new Character(12, "prueba", "adsfasfasf", "today", new Thumbnail("http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784", "jpg"),
-                                        ["A", "B", "C"], ["D", "E", "F"], ["G", "H", "I"]
-                                        , [new Stories("Test1", "test1"), new Stories("Test2", "Test2")]));
-
-   /* this.characteresService.getCharacters().then(resp =>{
+   
+    this.characteresService.getCharacters().then(resp =>{
       if (resp.code === 200) {
         this.characteres = [];
-        this.characteres = resp.data ? resp.data.characteres : undefined;
+        console.log(resp);
+        this.characteres = resp.data ? resp.data.results : undefined;
       } else {
         this.messageService.add({ severity: 'error', summary: "Error", detail: resp.description, life: 5000 });
       }
     }).catch(err => {
       this.messageService.add({ severity: 'error', summary: "Error", detail: err.message, life: 5000 });
-    });*/
+    });
   }
 
   onRowSelect(event: any) {

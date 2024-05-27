@@ -20,7 +20,8 @@ export class CallServicesComponent implements OnInit{
       this.callService.getCalls().then(resp =>{
         if (resp.code === 200) {
           this.calls = [];
-          this.calls = resp.data ? resp.data.calls : undefined;
+          this.calls = resp.data ? resp.data : undefined;
+          console.log(this.calls)
         } else {
           this.messageService.add({ severity: 'error', summary: "Error", detail: resp.description, life: 5000 });
         }

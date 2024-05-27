@@ -1,6 +1,6 @@
 import { Item } from "./Item";
 
-export class Stories {
+export class Event {
     available: number = 0;
     items: Item[] = [];
 }
