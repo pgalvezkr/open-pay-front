@@ -9,9 +9,9 @@
     </ng-template>
     <ng-template pTemplate="body" let-call>
         <tr>
-            <td>{{ call.code }}</td>
-            <td>{{ call.servicio }}</td>
-            <td>{{ call.fecha | date:'fullDate' }}</td>
+            <td>{{ call.id }}</td>
+            <td>{{ call.serviceName }}</td>
+            <td>{{ call.executionDate | date:'dd/MM/yyyy hh:mm:ss' }}</td>
         </tr>
     </ng-template>
 </p-table>

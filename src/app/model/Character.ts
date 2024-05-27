@@ -1,3 +1,6 @@
+import { Comic } from "./Comic";
+import { Event } from "./Event";
+import { Serie } from "./Serie";
 import { Stories } from "./Stories";
 import { Thumbnail } from "./Thumbnail";
 
@@ -6,22 +9,11 @@ export class Character {
     name: string = "";
     description: string = "";
     modified: string = "";
-    thumbnail: Thumbnail;
-    comics: string[] = [];
-    series: string[] = [];
-    events: string[] = [];
-    stories: Stories[] = [];
+    thumbnail: Thumbnail = new Thumbnail();
+    comics: Comic = new Comic();
+    series: Serie = new Serie();
+    events: Event = new Event();
+    stories: Stories = new Stories;
 
-    constructor(id: number, name: string, description: string, modified: string, thumbnail: Thumbnail, comics: string[],
-        series: string[], events: string[], stories: Stories[]){
-            this.id = id;
-            this.name = name;
-            this.description = description;
-            this.modified = modified;
-            this.thumbnail = thumbnail;
-            this.comics = comics;
-            this.series = series;
-            this.events = events;
-            this.stories = stories;
-    }
+
 }

@@ -20,6 +20,6 @@ export class CharacterService {
 
 
     getCharacters(): Promise<Response> {
-        return this.genericService.genericCallServices(this.urlService.urlGetCharacterById, null);
+        return this.genericService.genericCallServices(this.urlService.characterContext, null);
     }
 }

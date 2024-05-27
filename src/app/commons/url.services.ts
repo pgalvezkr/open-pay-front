@@ -5,7 +5,7 @@ import { environment } from '../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class UrlServices {
     urlApiBackend = environment.urlBackend;
-    characterContext = this.urlApiBackend + '/characters';
+    characterContext = this.urlApiBackend + 'api/marvel';
     urlGetCharacterById = this.characterContext + '/{characterId}'
-    callContext = this.urlApiBackend + '/calls';
+    binnacle = this.urlApiBackend + 'api/binnacle';
 }
